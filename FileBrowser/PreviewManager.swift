@@ -9,7 +9,7 @@
 import Foundation
 import QuickLook
 
-class PreviewManager: NSObject, QLPreviewControllerDataSource {
+public class PreviewManager: NSObject, QLPreviewControllerDataSource {
     
     var filePath: URL?
     
@@ -33,11 +33,11 @@ class PreviewManager: NSObject, QLPreviewControllerDataSource {
     }
     
     
-    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+    public func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
         return 1
     }
     
-    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+    public func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
         let item = PreviewItem()
         if let filePath = filePath {
             item.filePath = filePath
